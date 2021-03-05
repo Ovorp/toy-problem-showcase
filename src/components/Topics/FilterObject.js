@@ -70,7 +70,6 @@ export default class FilterObject extends Component {
   };
 
   render() {
-    console.log(this.state);
     return (
       <div className="puzzleBox filterObjectPB">
         <h4>Filter Object</h4>
