@@ -34,7 +34,6 @@ export default class Palindrome extends Component {
   };
 
   render() {
-    console.log(this.state);
     return (
       <div className="puzzleBox filterStringPB">
         <h4>Palindrome Checker</h4>

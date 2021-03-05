@@ -28,7 +28,6 @@ export default class Sum extends Component {
   };
 
   render() {
-    console.log(this.state);
     return (
       <div className="puzzleBox sumPB">
         <h4>Sum</h4>
