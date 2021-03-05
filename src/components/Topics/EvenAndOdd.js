@@ -1,10 +1,57 @@
 import React, { Component } from 'react';
 
 export default class EvenAndOdd extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      evenArray: [],
+      oddArray: [],
+      userInput: '',
+    };
+  }
+
+  userStr = (val) => {
+    this.setState({
+      userInput: val,
+    });
+  };
+
+  splitArr = () => {
+    let theEvenArr = [];
+    let theOddArr = [];
+    let theStr = this.state.userInput.split(',');
+    for (const key of theStr) {
+      console.log(key, 'key');
+      key % 2 === 0 ? theEvenArr.push(key) : theOddArr.push(key);
+    }
+    this.setState({
+      evenArray: theEvenArr,
+      oddArray: theOddArr,
+    });
+  };
+
   render() {
+    console.log(this.state);
     return (
-      <div>
-        <p>Even and Odd</p>
+      <div className="puzzleBox evenAndOddPB">
+        <h4>Evens and Odds</h4>
+        <input
+          className="inputLine"
+          onChange={(e) => {
+            this.userStr(e.target.value);
+          }}
+          value={this.state.userInput}
+        />
+        <button className="confirmationButton" onClick={this.splitArr}>
+          Split
+        </button>
+        <span className="resultsBox">
+          The Even Numbers: [{this.state.evenArray.toString()}]
+        </span>
+        <span className="resultsBox">
+          The Odd Numbers: [{this.state.oddArray.toString()}]
+        </span>
       </div>
     );
   }
