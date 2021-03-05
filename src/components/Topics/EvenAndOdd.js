@@ -22,12 +22,12 @@ export default class EvenAndOdd extends Component {
     let theOddArr = [];
     let theStr = this.state.userInput.split(',');
     for (const key of theStr) {
-      console.log(key, 'key');
       key % 2 === 0 ? theEvenArr.push(key) : theOddArr.push(key);
     }
     this.setState({
       evenArray: theEvenArr,
       oddArray: theOddArr,
+      userInput: '',
     });
   };
 
@@ -46,10 +46,10 @@ export default class EvenAndOdd extends Component {
           Split
         </button>
         <span className="resultsBox">
-          The Even Numbers: [{this.state.evenArray.toString()}]
+          The Even Numbers: [{this.state.evenArray}]
         </span>
         <span className="resultsBox">
-          The Odd Numbers: [{this.state.oddArray.toString()}]
+          The Odd Numbers: [{this.state.oddArray}]
         </span>
       </div>
     );

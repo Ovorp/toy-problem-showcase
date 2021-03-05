@@ -65,6 +65,7 @@ export default class FilterObject extends Component {
     let answer = oldArrOfObj.filter((objInArr) => objInArr[val]);
     this.setState({
       filteredArray: answer,
+      userInput: '',
     });
   };
 
